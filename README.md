@@ -6,14 +6,10 @@ A handly Docker image of goose.
  1. Store sql schema files in ```./schema```
  1. Save .env file
     ```bash
-    POSTGRES_USER=postgres
-    POSTGRES_PASSWORD=postgres
-    POSTGRES_SERVER=postgres
-    POSTGRES_PORT=5432
-    POSTGRES_DB=postgres
-    POSTGRES_SSLMODE=disable
+    GOOSE_DRIVER=postgres
+    GOOSE_DBSTRING="postgres://user:password@qwerty.us-east-1.redshift.amazonaws.com:5439/db"
     ```
- 1. In docker-compose.yml
+ 1. To ```goose up```, write docker-compose.yml as following
     ```yaml
     version: '3'
     services:
