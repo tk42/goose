@@ -25,6 +25,7 @@ A handly Docker image of goose.
       working_dir: "/src"
       volumes:
         - "./schema:/src"
+      command: "up"
       depends_on:
         - postgres
 
