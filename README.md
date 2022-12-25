@@ -11,6 +11,7 @@ A handly Docker image of goose.
     POSTGRES_SERVER=postgres
     POSTGRES_PORT=5432
     POSTGRES_DB=postgres
+    POSTGRES_SSLMODE=disable
     ```
  1. In docker-compose.yml
     ```yaml
@@ -22,7 +23,6 @@ A handly Docker image of goose.
       env_file:
         - .env
       working_dir: "/src"
-      command: goose postgres "postgres://${POSTGRES_USER}:${POSTGRES_PASSWORD}@${POSTGRES_SERVER}:${POSTGRES_PORT}/${POSTGRES_DB}?sslmode=disable" up
       volumes:
         - "./schema:/src"
       depends_on:
